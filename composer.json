@@ -1,0 +1,31 @@
+{
+    "name": "utkuhalis/etone-kasafix",
+    "description": "This application for eTone v8",
+    "homepage": "https://github.com/utkuhalis/etone-kasafix",
+    "license": "AGPL-3.0-or-later",
+    "minimum-stability": "dev",
+    "type": "library",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Utku Halis",
+            "email": "personal@utkuhalis.com.tr"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "files": [
+            "src/init.php"
+        ],
+        "psr-4": {
+            "Plugins\\Calculator\\": "src/"
+        }
+    },
+    "config": {
+        "lock": false,
+        "sort-packages": true,
+        "platform-check": true
+    }
+}
