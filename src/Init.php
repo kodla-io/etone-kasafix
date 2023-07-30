@@ -1,5 +1,6 @@
 <?php
 use CodeIgniter\Events\Events;
+use CodeIgniter\View\Plugins;
 
 class Init
 {
@@ -8,11 +9,26 @@ class Init
         helper('core');
 
         Events::on('navbar_render', static function () {
-            echo create_nav_title('KasaFix', ['_ST', '_ED']);
-            echo create_nav_item('Bayi Kaydı', 'dealerCreate', 'user-plus', ['_ST', '_ED']);
-            echo create_nav_item('Bayi Listesi', 'dealerList', 'list', ['_ED']);
-            echo create_nav_item('Satış Temsilcisi Listesi', '/st/list', 'list', ['_ED']);
-            echo create_nav_item('Muhasebe', 'accounting', 'dollar-sign', ['_ED']);
+
+            /*
+                _ST = Satış Temsilcisi
+                _ED = Editor
+                _PS = Personel
+                _YN = Yönetici
+            */
+
+            echo create_nav_title('KasaFix', ['_ST', '_ED', '_PS', '_YN']);
+            echo create_nav_item('Bayiler', 'bayiListesi', 'user-plus', ['_ST', '_ED']);
+            echo create_nav_item('Satış Temsilcisi', 'temilciListesi', 'user-plus', ['_ED']);
+
+
+            echo create_nav_item('Personeller', 'personelListesi', 'user-plus', ['_ED', '_YN']);
+            echo create_nav_item('Müşteriler', 'musteriListesi', 'user-plus', ['_ED', '_YN']);
+            echo create_nav_item('Ürünler', 'urunListesi', 'plus-square', ['_ED', '_YN']);
+            echo create_nav_item('Fatura&Makbuz', 'faturaMakbuz', 'dollar-sign', ['_ED', '_PS', '_YN']);
+            echo create_nav_item('Kasa', 'kasa', 'dollar-sign', ['_ED', '_PS', '_YN']);
+            echo create_nav_item('Muhasebe', 'muhasebe', 'pie-chart', ['_YN', '_ED']);
+            echo create_nav_item('Ayarlar', 'ayarlar', 'settings', ['_YN', '_ED']);
         }, 100);
 
         Events::on('page_dealerCreate', static function ($varList, $User) {
@@ -25,6 +41,8 @@ class Init
 
         Events::on('page_delaerCreateOn', static function ($varList, $User) {
             echo "<pre>".print_r(getPost(), true)."</pre>";
+            model('Plugins\KasaFix\Model\Bayiler')->insert(getPost());
+            echo "<script>location.href= '/eTone/dealerCreate';</script>";
         }, 100);
     }
 }
