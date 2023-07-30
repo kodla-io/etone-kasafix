@@ -4,32 +4,31 @@ namespace Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddBlog extends Migration
+class Bayiler extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'blog_id' => [
+            'id' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'blog_title' => [
-                'type'       => 'VARCHAR',
+            'name' => [
+                'type' => 'TEXT',
                 'constraint' => '100',
             ],
-            'blog_description' => [
-                'type' => 'TEXT',
-                'null' => true,
+            'surname' => [
+                'type' => 'TEXT'
             ],
         ]);
-        $this->forge->addKey('blog_id', true);
-        $this->forge->createTable('blog');
+        $this->forge->addKey('id', true);
+        $this->forge->createTable('bayiler');
     }
 
     public function down()
     {
-        $this->forge->dropTable('blog');
+        $this->forge->dropTable('bayiler');
     }
 }

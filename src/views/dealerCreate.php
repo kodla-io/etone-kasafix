@@ -15,7 +15,7 @@
                                 <h4 class="card-title">Yeni Bayi Kaydı</h4>
                             </div>
                             <div class="card-body">
-                                <?= form_open('', ['class' => 'form form-horizontal']); ?>
+                                <?= form_open('/eTone/delaerCreateOn', ['class' => 'form form-horizontal']); ?>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group row">
@@ -23,7 +23,7 @@
                                                 <?= form_label('Bayi Adı', 'bayi_adi'); ?>
                                             </div>
                                             <div class="col-sm-9">
-                                                <?= form_input('', '', ['id' => 'bayi_adi', 'class' => 'form-control', 'placeholder' => 'Bayi Adı']); ?>
+                                                <?= form_input('name', '', ['id' => 'bayi_adi', 'class' => 'form-control', 'placeholder' => 'Bayi Adı']); ?>
                                             </div>
                                         </div>
                                     </div>
@@ -35,14 +35,13 @@
                                                 <?= form_label('Bayi Soyadı', 'bayi_adi'); ?>
                                             </div>
                                             <div class="col-sm-9">
-                                                <?= form_input('', '', ['id' => 'bayi_adi', 'class' => 'form-control', 'placeholder' => 'Bayi Soyadı']); ?>
+                                                <?= form_input('surname', '', ['id' => 'bayi_adi', 'class' => 'form-control', 'placeholder' => 'Bayi Soyadı']); ?>
                                             </div>
                                         </div>
                                     </div>
 
-
                                     <div class="col-sm-9 offset-sm-3">
-                                        <?= form_button('', 'Oluştur', ['class' => 'btn btn-primary waves-effect waves-float waves-light']); ?>
+                                        <?= form_submit('', 'Oluştur', ['class' => 'btn btn-primary waves-effect waves-float waves-light']); ?>
                                     </div>
                                 </div>
                             </div>
