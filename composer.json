@@ -20,7 +20,8 @@
             "src/Init.php"
         ],
         "psr-4": {
-            "Plugins\\KasaFix\\": "src/"
+            "Plugins\\KasaFix\\": "src/",
+            "Database\\Migrations\\": "migrations/"
         }
     },
     "config": {
