@@ -17,10 +17,10 @@
     },
     "autoload": {
         "files": [
-            "src/init.php"
+            "src/Init.php"
         ],
         "psr-4": {
-            "Plugins\\Calculator\\": "src/"
+            "Plugins\\KasaFix\\": "src/"
         }
     },
     "config": {
