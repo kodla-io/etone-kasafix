@@ -21,8 +21,7 @@
         ],
         "psr-4": {
             "Plugins\\KasaFix\\": "src/",
-            "Database\\Migrations\\": "database/migrations/",
-            "Database\\Models\\": "database/models/"
+            "Database\\Migrations\\": "database/migrations/"
         }
     },
     "config": {

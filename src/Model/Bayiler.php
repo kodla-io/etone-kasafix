@@ -1,5 +1,5 @@
 <?php
-namespace Database\Models;
+namespace Plugins\KasaFix\Model;
 use CodeIgniter\Model;
 
 class Bayiler extends Model {
