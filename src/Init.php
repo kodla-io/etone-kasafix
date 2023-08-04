@@ -31,7 +31,7 @@ class Init
             echo create_nav_item('Ayarlar', 'ayarlar', 'settings', ['_YN', '_ED']);
         }, 100);
 
-        Events::on('page_dealerCreate', static function ($varList, $User) {
+        Events::on('page_bayiListesi', static function ($varList, $User) {
             helper('form');
             echo view('theme/default/eTone/template/head', $varList);
             echo view('theme/default/eTone/template/navbar', $User);
@@ -39,10 +39,11 @@ class Init
             echo view('theme/default/eTone/template/footer');
         }, 100);
 
-        Events::on('page_delaerCreateOn', static function ($varList, $User) {
+        Events::on('ajax_delaerCreateOn', static function ($varList, $User) {
+            echo rand();
             echo "<pre>".print_r(getPost(), true)."</pre>";
-            model('Plugins\KasaFix\Model\Bayiler')->insert(getPost());
-            echo "<script>location.href= '/eTone/dealerCreate';</script>";
+            // model('Plugins\KasaFix\Model\Bayiler')->insert(getPost());
+            // echo "<script>location.href= '/eTone/bayiListesi';</script>";
         }, 100);
     }
 }
